@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4em;
+      margin: 0;
+      animation: bounce 2s infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 60px;
+      height: 80px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50% 50% 50% 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday! 🎂</h1>
+  <h2>🤍 RITA 🤍</h2>
+  <p>Berkah selalu hidupnya, Langeng hubungannya </p>
+
+  <!-- Balloons -->
+  <div class="balloon" style="left:10%; background: #FFD700;"></div>
+  <div class="balloon" style="left:25%; background: #FF69B4;"></div>
+  <div class="balloon" style="left:40%; background: #00CED1;"></div>
+  <div class="balloon" style="left:55%; background: #ADFF2F;"></div>
+  <div class="balloon" style="left:70%; background: #FF6347;"></div>
+  <div class="balloon" style="left:85%; background: #8A2BE2;"></div>
+
+  <!-- Background Music -->
+  <audio id="birthdayMusic" autoplay loop>
+    <source src="asset/happybirthday.mp3.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+  </audio>
+  
+
+  <script>
+    // Auto-play on user interaction for better browser compatibility
+    window.addEventListener('click', () => {
+      const music = document.getElementById('birthdayMusic');
+      if (music.paused) music.play();
+    });
+  </script>
+</body>
+</html>
